@@ -10,12 +10,13 @@ const app = express()
 
 
 app.use(cors({
-  origin: [
-  "https://ecommerce-backend-hbly.onrender.com"
-  ],
+  origin: "http://localhost:5173",
   credentials: true,
-  exposedHeaders: ["set-cookie"]
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+app.options("*", cors());
 
 app.use(express.json());
 app.use(body.json());
