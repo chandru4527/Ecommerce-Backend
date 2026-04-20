@@ -61,11 +61,12 @@ exports.login = async (req, res) => {
         );
 
         // set cookie
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax"
-        });
+res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    path: "/"
+});
 
         res.json({
             msg: "Login successfully",
