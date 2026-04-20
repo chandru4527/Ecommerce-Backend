@@ -9,7 +9,10 @@ const app = express()
 
 
 app.use(cors({
-  origin: "https://shopsoforntend.netlify.app",
+  origin: [
+    "https://chandru4527.github.io/Ecommerce-Frontend/",
+    "https://shopsoforntend.netlify.app"
+  ],,
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
